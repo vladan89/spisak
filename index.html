@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link src="index.css"/>
+  </head>
+  <body>
+    <div id="app">
+      <item v-for="listItem in list"
+            v-bind:item="listItem"
+            v-bind:key="listItem.id"></item>
+    </div>
+    <input v-model="newItem.name">
+    <input v-model="newItem.amount">
+    <button v-on:click="add">Add item</button>
+    <script src="index.js"></script>
+  </body>
+</html>
