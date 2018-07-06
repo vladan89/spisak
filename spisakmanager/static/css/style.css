@@ -1,0 +1,9 @@
+.collection {
+  list-style: none;
+}
+.collection-item {
+  font-size: 26px;
+}
+.collection-item .status {
+  cursor: pointer;
+}

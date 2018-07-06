@@ -1,13 +1,12 @@
 <template>
   <div id="dashboard">
     <ui class="collection with-header">
-      <li class="collection-header">
-        <h4>Za kupovinu:</h4>
+      <li v-for="item in items" v-bind:key="item.id" class="collection-item">
+          <span>
+            <i class="status fa" v-bind:class="{'fa-check-circle text-success': item.available, 'fa-times-circle text-danger': !item.available,}"></i>
+          </span>
+          {{item.name}}, {{item.amount}}
       </li>
-      <li v-for="item in items"
-        v-bind:key="item.id" class="collection-item">
-          <div class="chip">{{item.amount}}</div>{{item.name}}
-        </li>
     </ui>
 
     <div class="fixed-action-btn">
@@ -34,7 +33,8 @@ export default {
           'id' : doc.id,
           'item_id' : doc.data().item_id,
           'name' : doc.data().name,
-          'amount' : doc.data().amount
+          'amount' : doc.data().amount,
+          'available' : doc.data().available
         }
         this.items.push(data);
       })
