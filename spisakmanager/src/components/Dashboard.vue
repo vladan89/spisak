@@ -6,6 +6,9 @@
             <i class="status fa" v-bind:class="{'fa-check-circle text-success': item.available, 'fa-times-circle text-danger': !item.available,}"></i>
           </span>
           {{item.name}}, {{item.amount}}
+          <router-link class="secondary-content" v-bind:to="{name: 'view-item', params: {item_id: item.item_id}}">
+            <span> <i class="fa fa-eye"></i></span>
+          </router-link>
       </li>
     </ui>
 
