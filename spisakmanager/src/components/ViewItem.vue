@@ -62,7 +62,7 @@
               this.amount = doc.data().amount
               this.available = doc.data().available
           })
-        })
+        });
       },
       deleteItem() {
         if(confirm('Are you sure?')) {
