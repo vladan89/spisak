@@ -29,5 +29,6 @@ export default new Router({
       name: 'view-item',
       component: ViewItem
     }
-  ]
+  ],
+  mode: 'history'
 })
